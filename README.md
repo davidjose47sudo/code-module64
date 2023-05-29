@@ -1,7 +1,10 @@
-# Mi Módulo de Codificación
+# Módulo de Codificación
 
 [![NPM Version](https://img.shields.io/npm/v/code-module64.svg)](https://www.npmjs.com/package/code-module64)
-[![License](https://img.shields.io/github/license/davidjose47sudo/code-module64)](https://github.com/davidjose47sudo/code-module64/blob/main/LICENSE)
+![Bower](https://img.shields.io/bower/l/A?style=plastic)
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/davidjose47sudo/code-module64?style=plastic)
+![GitHub repo size](https://img.shields.io/github/repo-size/davidjose47sudo/code-module64)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/davidjose47sudo/code-module64)
 
 Un módulo simple de codificación para codificar y decodificar datos.
 
