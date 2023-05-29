@@ -16,7 +16,7 @@ export async function encode(datos: DatoSendEncode) {
   console.log(datos);
 
   try {
-    const response = await axios.post("http://localhost:3000/api/encode", datos);
+    const response = await axios.post("https://code64.onrender.com/api/encode", datos);
     const respuesta = response.data;
     console.log(respuesta);
     return respuesta;
@@ -27,7 +27,7 @@ export async function encode(datos: DatoSendEncode) {
 
 export async function decode(datos: DatoSendDecode) {
   try {
-    const response = await axios.post("http://localhost:3000/api/decode", datos);
+    const response = await axios.post("https://code64.onrender.com/api/decode", datos);
     const respuesta = response.data;
     if (typeof respuesta === "object") {
       console.log(respuesta);
