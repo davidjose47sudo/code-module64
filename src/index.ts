@@ -1,53 +1,40 @@
-export interface datoSendencode {
-  secret: string,
+import axios from 'axios';
+
+export interface DatoSendEncode {
+  secret: string;
   data: {
-    information: string
-  }
-}
-export interface datoSendecode {
-  text: string
-  key: string,
+    information: string;
+  };
 }
 
-export async function encode(datos: datoSendencode) {
-  console.log(datos)
-  const response = await fetch("http://localhost:3000/api/encode", {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(datos),
-  });
+export interface DatoSendDecode {
+  text: string;
+  key: string;
+}
 
-  if (!response.ok) {
+export async function encode(datos: DatoSendEncode) {
+  console.log(datos);
+
+  try {
+    const response = await axios.post("http://localhost:3000/api/encode", datos);
+    const respuesta = response.data;
+    console.log(respuesta);
+    return respuesta;
+  } catch (error) {
     throw new Error('Error al enviar la petición POST');
   }
-
-  // Aquí puedes manejar la respuesta de la petición
-  const respuesta = await response.json();
-  console.log(respuesta);
-  return respuesta
 }
 
-export async function decode(datos: datoSendecode) {
-  const response = await fetch("http://localhost:3000/api/decode/", {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(datos),
-  });
-
-  if (!response.ok) {
+export async function decode(datos: DatoSendDecode) {
+  try {
+    const response = await axios.post("http://localhost:3000/api/decode", datos);
+    const respuesta = response.data;
+    if (typeof respuesta === "object") {
+      console.log(respuesta);
+      return respuesta;
+    }
+    return "error";
+  } catch (error) {
     throw new Error('Error al enviar la petición POST');
-  }
-
-  // Aquí puedes manejar la respuesta de la petición
-  const respuesta = await response.json();
-  console.log(respuesta.information.information);
-  console.log(respuesta.information.secret);
-  return {
-    "information": respuesta.information.information,
-    "secret": respuesta.information.secret
   }
 }
