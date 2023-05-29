@@ -47,9 +47,9 @@ Decodifica los datos proporcionados y los envía a un servidor remoto para su pr
 
 #### Parámetros decode
 
-datos (datoSendecode): Los datos a decodificar. Debe ser un objeto con las siguientes propiedades:
-text (string): El texto a decodificar.
-key (string): La clave para la decodificación.
+- `datos` (datoSendecode): Los datos a decodificar. Debe ser un objeto con las siguientes propiedades:
+  - `key` (string): La clave para la decodificación.
+  - `text` (string): El texto a decodificar.
 
 ```javascript
 const { decode } = require('code-module64');
