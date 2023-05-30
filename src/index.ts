@@ -18,7 +18,6 @@ export async function encode(datos: DatoSendEncode) {
   try {
     const response = await axios.post("https://code64.onrender.com/api/encode", datos);
     const respuesta = response.data;
-    console.log(respuesta);
     return respuesta;
   } catch (error) {
     throw new Error('Error al enviar la petición POST');
@@ -30,7 +29,6 @@ export async function decode(datos: DatoSendDecode) {
     const response = await axios.post("https://code64.onrender.com/api/decode", datos);
     const respuesta = response.data;
     if (typeof respuesta === "object") {
-      console.log(respuesta);
       return respuesta;
     }
     return "error";

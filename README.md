@@ -19,10 +19,10 @@ npm install code-module64
 Codifica los datos proporcionados y los envía a un servidor remoto para su procesamiento.
 
 #### Parámetros encode
-
 - `datos` (datoSendencode): Los datos a codificar. Debe ser un objeto con las siguientes propiedades:
   - `secret` (string): El secreto para la codificación.
   - `data` (object): Los datos a codificar.
+
 
 #### Ejemplo
 
@@ -32,7 +32,7 @@ const { encode } = require('code-module64');
 const datos = {
   secret: 'soloyo',
   data: {
-    Information: 'hey bro tengo cosas'
+    information: 'hey bro tengo cosas'
   }
 };
 
@@ -44,9 +44,12 @@ encode(datos)
     console.error('Error al codificar los datos:', error);
   });
 
-decode(datos: datoSendecode): Promise<any>
-Decodifica los datos proporcionados y los envía a un servidor remoto para su procesamiento.
 ```
+Decodifica los datos proporcionados y los envía a un servidor remoto para su procesamiento.
+
+## Uso
+
+### `decode(datos: DatoSendDecode): Promise<any>`
 
 #### Parámetros decode
 
